@@ -1,19 +1,28 @@
 <html>
-<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-<py-script>
-lst = [1,2,3,4,5,6]
-for idx,val in enumerate(lst):
-  print(f'{idx},{val}')
+  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 
-dic = {'A':10,'B':20,'C':30}
-for key,val in dic.items():
-  print(f'{key},{val}')
+  <h1>
+    pyscript-testing
+  </h1>
 
-def add_def(a, b):
-  return a + b
-a = 10
-b = 20
-print(add_def(a,b))
-</py-script>
+  <py-script>
+    import pip
+
+    pip.main(['install', '--user', 'graphviz'])
+    reload(site)
+
+    from graphviz import Diagraph
+
+
+    G = Diagraph(format='png')
+    G.attr('node', shape='circle')
+
+    N = 15
+
+    for i in range(N):
+      G.node(str(i), str(i))
+
+    print(G)
+  </py-script>
 </html>
