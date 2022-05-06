@@ -1,28 +1,26 @@
 <html>
-  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 
-  <h1>
-    pyscript-testing
-  </h1>
+<h1>pyscript-testing</h1>
 
-  <py-script>
-    import pip
+<py-script>
+import pip
 
-    pip.main(['install', '--user', 'graphviz'])
-    reload(site)
+pip.main(['install', '--user', 'graphviz'])
+reload(site)
 
-    from graphviz import Diagraph
+from graphviz import Diagraph
 
 
-    G = Diagraph(format='png')
-    G.attr('node', shape='circle')
+G = Diagraph(format='png')
+G.attr('node', shape='circle')
 
-    N = 15
+N = 15
 
-    for i in range(N):
-      G.node(str(i), str(i))
+for i in range(N):
+  G.node(str(i), str(i))
 
-    print(G)
-  </py-script>
+print(G)
+</py-script>
 </html>
