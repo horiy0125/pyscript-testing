@@ -4,12 +4,13 @@
 
 <h1>pyscript-testing</h1>
 
+<py-env>
+  - numpy
+  - matplotlib
+  - graphviz
+</py-env>
+
 <py-script>
-import pip
-
-pip.main(['install', '--user', 'graphviz'])
-reload(site)
-
 from graphviz import Diagraph
 
 
