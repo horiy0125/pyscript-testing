@@ -23,14 +23,60 @@ from graphviz import Digraph
 
 G = Digraph(format='png')
 G.attr('node', shape='circle')
-N = 15
+
+<!--
+- top
+  - hoge
+    - hogehoge1
+    - hogehoge2
+    - hogehoge3
+  - fuga
+    - fugafuga1
+    - fugafuga2
+    - fugafuga3
+  - piyo
+    - piyopiyo1
+    - piyopiyo2
+    - piyopiyo3
+-->
+
+data = {
+  'top': [
+    {
+      'hoge': [
+        {'hogehoge1': None},
+        {'hogehoge2': None},
+        {'hogehoge3': None}
+      ]
+    },
+    {
+      'fuga': [
+        {'fugafuga1': None},
+        {'fugafuga2': None},
+        {'fugafuga3': None}
+      ]
+    },
+    {
+      'piyo': [
+        {'piyopiyo1': None},
+        {'piyopiyo2': None},
+        {'piyopiyo3': None}
+      ]
+    },
+  ]
+}
+
+for key in data:
+  print(key)
+
+<!-- N = 15
 
 for i in range(N):
     G.node(str(i), str(i))
 
 for i in range(N):
     if (i - 1) // 2 >= 0:
-        G.edge(str((i - 1) // 2), str(i))
+        G.edge(str((i - 1) // 2), str(i)) -->
 
 print(G)
 
